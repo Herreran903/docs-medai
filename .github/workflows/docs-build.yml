@@ -1,0 +1,61 @@
+name: Docs Build
+
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: docs-build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout repo-docs
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate API docs
+        env:
+          FRONT_REPO: ORG/repo-front
+          BACK_REPO: ORG/repo-back
+          FRONT_REPO_TOKEN: ${{ secrets.GH_PAT }}
+          BACK_REPO_TOKEN: ${{ secrets.GH_PAT }}
+          # Optional overrides:
+          # BACK_OPENAPI_URL: https://api.example.com/openapi.json
+          # BACK_OPENAPI_PATH: path/to/openapi.json
+          # FRONT_TYPEDOC_CMD: npm run docs
+        run: npm run prebuild
+
+      - name: Build Docusaurus
+        run: npm run build
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
