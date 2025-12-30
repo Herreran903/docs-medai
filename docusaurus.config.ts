@@ -77,8 +77,8 @@ const config: Config = {
           label: 'Frontend API',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'backendApi',
+          type: 'doc',
+          docId: 'backend-api',
           position: 'left',
           label: 'Backend API',
         },
@@ -125,7 +125,7 @@ const config: Config = {
             },
             {
               label: 'Backend API',
-              to: '/docs/api/backend',
+              to: '/docs/backend-api',
             },
           ],
         },
