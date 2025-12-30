@@ -43,13 +43,13 @@ source "${BACK_REPO_DIR}/.venv/bin/activate"
 echo "Installing backend dependencies"
 python -m pip install --upgrade pip
 
-if [[ -f "${BACK_REPO_DIR}/requirements.txt" ]]; then
-  pip install -r "${BACK_REPO_DIR}/requirements.txt"
+if [[ -f "${BACK_REPO_DIR}/requirements.docs.txt" ]]; then
+  pip install -r "${BACK_REPO_DIR}/requirements.docs.txt"
 elif [[ -f "${BACK_REPO_DIR}/pyproject.toml" ]]; then
   # Install the package in editable mode is not required; regular install is fine.
   pip install "${BACK_REPO_DIR}"
 else
-  echo "ERROR: No requirements.txt or pyproject.toml found in backend repo."
+  echo "ERROR: No requirements.docs.txt or pyproject.toml found in backend repo."
   exit 1
 fi
 # -------------------------------------------------------------------
