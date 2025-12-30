@@ -35,8 +35,8 @@ jobs:
 
       - name: Generate API docs
         env:
-          FRONT_REPO: ORG/repo-front
-          BACK_REPO: ORG/repo-back
+          FRONT_REPO: HerreraN903/medai-frontend
+          BACK_REPO: HerreraN903/medai-backend
           FRONT_REPO_TOKEN: ${{ secrets.GH_PAT }}
           BACK_REPO_TOKEN: ${{ secrets.GH_PAT }}
           # Optional overrides:
