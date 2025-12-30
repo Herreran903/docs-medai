@@ -68,23 +68,6 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    [
-      'redocusaurus',
-      {
-        specs: [
-          {
-            spec: 'openapi/backend.json',
-            route: '/api/',
-          },
-        ],
-        theme: {
-          primaryColor: '#2e5bea',
-        },
-      },
-    ],
-  ],
-
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
@@ -110,7 +93,12 @@ const config: Config = {
           position: 'left',
           label: 'Front API',
         },
-        {to: '/api', label: 'Backend API', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'backendApi',
+          position: 'left',
+          label: 'Backend API',
+        },
         {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/ORG/repo-docs',

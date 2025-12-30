@@ -1,0 +1,14 @@
+---
+title: Backend API
+---
+
+import React from 'react';
+import {RedocStandalone} from 'redoc';
+
+<RedocStandalone
+  specUrl="/openapi/backend.json"
+  options={{
+    scrollYOffset: 'nav',
+    hideDownloadButton: false,
+  }}
+/>;

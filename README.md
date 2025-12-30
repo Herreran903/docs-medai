@@ -22,11 +22,9 @@ Variables opcionales para personalizar rutas y comandos:
 - `FRONT_TYPEDOC_CMD` (por ejemplo `npm run docs`)
 - `FRONT_TYPEDOC_OUT` (directorio donde TypeDoc escribe)
 - `BACK_REPO` (default `ORG/repo-back`)
-- `BACK_REF` (default `main`)
+- `BACK_BRANCH` (default `main`)
 - `BACK_REPO_URL` (override URL de git)
 - `BACK_REPO_TOKEN` (override token para el back)
-- `BACK_OPENAPI_URL` (modo A: descarga por URL)
-- `BACK_OPENAPI_PATH` (modo B: path en repo-back, default `openapi.json`)
 - `DOCS_URL`, `BASE_URL`, `DOCS_ORG`, `DOCS_REPO` (Docusaurus/GitHub Pages)
 
 ## Instalacion
