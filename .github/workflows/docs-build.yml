@@ -40,7 +40,7 @@ jobs:
           BACK_BRANCH: main
           FRONT_REPO_TOKEN: ${{ secrets.GH_PAT }}
           BACK_REPO_TOKEN: ${{ secrets.GH_PAT }}
-        run: npm run prebuild
+        run: npm run gen:api
 
       - name: Build Docusaurus
         run: npm run build

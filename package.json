@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "prebuild": "bash scripts/fetch_front_docs.sh && bash scripts/fetch_back_openapi.sh",
+    "gen:api": "bash scripts/fetch_front_docs.sh && bash scripts/fetch_back_openapi.sh",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
