@@ -2,46 +2,35 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# MedAI
 
-Let's discover **Docusaurus in less than 5 minutes**.
+MedAI es una aplicacion web orientada al procesamiento y extraccion de entidades clinicas a partir de texto medico y documentos (PDF, DOCX, texto libre). La plataforma combina un backend en FastAPI (Python) y un frontend en React/Next.js para ofrecer una experiencia completa de analisis clinico.
 
-## Getting Started
+## Arquitectura general
 
-Get started by **creating a new site**.
+- **Backend (FastAPI)**: expone endpoints como `POST /extract`, `POST /extract-batch` y `GET /notes/{id}` para procesar texto y recuperar resultados.
+- **Modelos soportados**: LSTM, Transformers como BETO/Roberta y LLMs como GPT/Claude.
+- **Persistencia**: los resultados se guardan en MongoDB.
+- **OpenAPI**: la especificacion se genera automaticamente con `scripts/export_openapi.py`.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Frontend
 
-### What you'll need
+El frontend consume la API del backend y ofrece helpers, tipos y hooks documentados con TypeDoc. Esto permite integrar facilmente la funcionalidad de extraccion en interfaces web.
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+## Documentacion y despliegue
 
-## Generate a new site
+La documentacion vive en un repositorio separado (`docs-medai`) construido con Docusaurus. En CI:
 
-Generate a new Docusaurus site using the **classic template**.
+- Se clona el repo del frontend para generar Markdown con TypeDoc.
+- Se clona el repo del backend para generar `openapi.json`.
+- La especificacion se renderiza con ReDoc.
 
-The classic template will automatically be added to your project after you run the command:
+El sitio se publica en GitHub Pages con `baseUrl=/docs-medai/` y el OpenAPI se sirve en:
+`https://herreran903.github.io/docs-medai/openapi/backend.json`.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## Repositorios principales
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+- Frontend: https://github.com/Herreran903/medai-frontend
+- Backend: https://github.com/Herreran903/medai-backend
+- Documentacion: https://github.com/Herreran903/docs-medai
+- Sitio publicado: https://herreran903.github.io/docs-medai/
