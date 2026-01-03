@@ -78,8 +78,23 @@ const config: Config = {
           label: 'Backend API',
         },
         {
+          href: 'https://medai-frontend-seven.vercel.app/',
+          label: 'App',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/Herreran903/medai-frontend',
+          label: 'Frontend',
+          position: 'right',
+        },
+        {
+          href: 'https://github.com/Herreran903/medai-backend',
+          label: 'Backend',
+          position: 'right',
+        },
+        {
           href: 'https://github.com/Herreran903/docs-medai',
-          label: 'GitHub',
+          label: 'Docs',
           position: 'right',
         },
       ],
