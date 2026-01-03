@@ -78,7 +78,7 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: 'backend-api',
+          docId: 'api/back/index',
           position: 'left',
           label: 'Backend API',
         },
@@ -125,7 +125,7 @@ const config: Config = {
             },
             {
               label: 'Backend API',
-              to: '/docs/backend-api',
+              to: '/docs/api/back',
             },
           ],
         },
