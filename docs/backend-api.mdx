@@ -4,9 +4,10 @@ title: Backend API
 
 import React from 'react';
 import {RedocStandalone} from 'redoc';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <RedocStandalone
-  specUrl="/openapi/backend.json"
+  specUrl={useBaseUrl('openapi/backend.json')}
   options={{
     scrollYOffset: 'nav',
     hideDownloadButton: false,
