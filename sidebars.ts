@@ -13,7 +13,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: ['intro', 'backend-api'],
+  overviewSidebar: ['intro'],
 
   frontApi: [
     {
@@ -24,14 +24,7 @@ const sidebars: SidebarsConfig = {
     },
   ],
 
-  backendApi: [
-    {
-      type: 'category',
-      label: 'Backend API',
-      collapsed: false,
-      items: ['backend-api'],
-    },
-  ],
+  backendApi: ['backend-api'],
 
   // But you can create a sidebar manually
   /*

@@ -34,3 +34,4 @@ El sitio se publica en GitHub Pages con `baseUrl=/docs-medai/` y el OpenAPI se s
 - Backend: https://github.com/Herreran903/medai-backend
 - Documentacion: https://github.com/Herreran903/docs-medai
 - Sitio publicado: https://herreran903.github.io/docs-medai/
+- App: https://medai-frontend-seven.vercel.app/
