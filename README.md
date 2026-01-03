@@ -2,7 +2,7 @@
 
 Este sitio se construye con [Docusaurus](https://docusaurus.io/) y se regenera en cada build con:
 - Docs del FRONT via TypeDoc en `docs/api/front`
-- Docs del BACK via OpenAPI en `docs/api/back`
+- Docs del BACK via OpenAPI en `docs/backend-api.mdx`
 - OpenAPI del BACK en `openapi/backend.json` (Redocusaurus)
 
 ## Requisitos

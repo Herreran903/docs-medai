@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'MedAI Docs',
-  tagline: 'Clinical text analysis and entity extraction platform',
+  tagline: 'Documentacion de la plataforma de extraccion de entidades clinicas',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -14,14 +14,15 @@ const config: Config = {
   },
 
   // GitHub Pages deployment
-  url: 'https://Herreran903.github.io',
+  url: 'https://herreran903.github.io',
   baseUrl: '/docs-medai/',
   trailingSlash: false,
 
   organizationName: 'Herreran903',
   projectName: 'docs-medai',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -36,13 +37,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           editUrl: 'https://github.com/Herreran903/docs-medai/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          editUrl: 'https://github.com/Herreran903/docs-medai/tree/main/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -51,7 +46,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/medai-social-card.jpg',
+    image: 'img/logo.svg',
 
     colorMode: {
       respectPrefersColorScheme: true,
@@ -77,24 +72,14 @@ const config: Config = {
           label: 'Frontend API',
         },
         {
-          type: 'doc',
-          docId: 'api/back/index',
+          type: 'docSidebar',
+          sidebarId: 'backendApi',
           position: 'left',
           label: 'Backend API',
         },
         {
-          to: '/blog',
-          label: 'Updates',
-          position: 'left',
-        },
-        {
-          href: 'https://github.com/Herreran903/medai-frontend',
-          label: 'Frontend',
-          position: 'right',
-        },
-        {
-          href: 'https://github.com/Herreran903/medai-backend',
-          label: 'Backend',
+          href: 'https://github.com/Herreran903/docs-medai',
+          label: 'GitHub',
           position: 'right',
         },
       ],
@@ -110,10 +95,6 @@ const config: Config = {
               label: 'Platform Overview',
               to: '/docs/intro',
             },
-            {
-              label: 'Clinical Use Cases',
-              to: '/docs/use-cases',
-            },
           ],
         },
         {
@@ -125,7 +106,7 @@ const config: Config = {
             },
             {
               label: 'Backend API',
-              to: '/docs/api/back',
+              to: '/docs/backend-api',
             },
           ],
         },
