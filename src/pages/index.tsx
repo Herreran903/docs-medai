@@ -15,12 +15,12 @@ export default function Home(): ReactNode {
         <p>{siteConfig.tagline}</p>
         <div className="margin-top--md">
           <Link className="button button--primary" to="/docs/intro">
-            Ver introduccion
+            Read introduction
           </Link>
           <Link className="button button--secondary margin-left--sm" to="/docs/api/front">
             Frontend API
           </Link>
-          <Link className="button button--secondary margin-left--sm" to="/docs/backend-api">
+          <Link className="button button--secondary margin-left--sm" to="/backend-api">
             Backend API
           </Link>
         </div>

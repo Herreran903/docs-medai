@@ -1,0 +1,10 @@
+.main {
+  width: 100%;
+  padding: 0;
+}
+
+.redocContainer {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}

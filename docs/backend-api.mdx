@@ -2,14 +2,8 @@
 title: Backend API
 ---
 
-import React from 'react';
-import {RedocStandalone} from 'redoc';
-import useBaseUrl from '@docusaurus/useBaseUrl';
+import Link from '@docusaurus/Link';
 
-<RedocStandalone
-  specUrl={useBaseUrl('/openapi/backend.json')}
-  options={{
-    scrollYOffset: 'nav',
-    hideDownloadButton: false,
-  }}
-/>;
+The full-width Backend API reference lives on a standalone page.
+
+<Link to="/backend-api">Open the Backend API reference</Link>.

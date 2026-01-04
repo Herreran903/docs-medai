@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'MedAI Docs',
-  tagline: 'Documentacion de la plataforma de extraccion de entidades clinicas',
+  tagline: 'Documentation for the clinical entity extraction platform',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -72,8 +72,7 @@ const config: Config = {
           label: 'Frontend API',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'backendApi',
+          to: '/backend-api',
           position: 'left',
           label: 'Backend API',
         },
@@ -121,7 +120,7 @@ const config: Config = {
             },
             {
               label: 'Backend API',
-              to: '/docs/backend-api',
+              to: '/backend-api',
             },
           ],
         },

@@ -4,34 +4,34 @@ sidebar_position: 1
 
 # MedAI
 
-MedAI es una aplicacion web orientada al procesamiento y extraccion de entidades clinicas a partir de texto medico y documentos (PDF, DOCX, texto libre). La plataforma combina un backend en FastAPI (Python) y un frontend en React/Next.js para ofrecer una experiencia completa de analisis clinico.
+MedAI is a web application focused on clinical entity extraction from medical text and documents (PDF, DOCX, free text). The platform combines a FastAPI (Python) backend and a React/Next.js frontend to deliver end-to-end clinical NLP.
 
-## Arquitectura general
+## Architecture
 
-- **Backend (FastAPI)**: expone endpoints como `POST /extract`, `POST /extract-batch` y `GET /notes/{id}` para procesar texto y recuperar resultados.
-- **Modelos soportados**: LSTM, Transformers como BETO/Roberta y LLMs como GPT/Claude.
-- **Persistencia**: los resultados se guardan en MongoDB.
-- **OpenAPI**: la especificacion se genera automaticamente con `scripts/export_openapi.py`.
+- **Backend (FastAPI)**: exposes endpoints like `POST /extract`, `POST /extract-batch`, and `GET /notes/{id}` to process text and fetch results.
+- **Supported models**: LSTM, Transformers such as BETO/Roberta, and LLMs such as GPT/Claude.
+- **Persistence**: results are stored in MongoDB.
+- **OpenAPI**: the specification is generated automatically by `scripts/export_openapi.py`.
 
 ## Frontend
 
-El frontend consume la API del backend y ofrece helpers, tipos y hooks documentados con TypeDoc. Esto permite integrar facilmente la funcionalidad de extraccion en interfaces web.
+The frontend consumes the backend API and provides helpers, types, and hooks documented with TypeDoc. This makes it easy to integrate extraction features in web interfaces.
 
-## Documentacion y despliegue
+## Documentation and deployment
 
-La documentacion vive en un repositorio separado (`docs-medai`) construido con Docusaurus. En CI:
+Documentation lives in a separate repository (`docs-medai`) built with Docusaurus. In CI:
 
-- Se clona el repo del frontend para generar Markdown con TypeDoc.
-- Se clona el repo del backend para generar `openapi.json`.
-- La especificacion se renderiza con ReDoc.
+- The frontend repo is cloned to generate Markdown with TypeDoc.
+- The backend repo is cloned to generate `openapi.json`.
+- The spec is rendered with ReDoc.
 
-El sitio se publica en GitHub Pages con `baseUrl=/docs-medai/` y el OpenAPI se sirve en:
+The site is published on GitHub Pages with `baseUrl=/docs-medai/`, and the OpenAPI is served at:
 `https://herreran903.github.io/docs-medai/openapi/backend.json`.
 
-## Repositorios principales
+## Main repositories
 
 - Frontend: https://github.com/Herreran903/medai-frontend
 - Backend: https://github.com/Herreran903/medai-backend
-- Documentacion: https://github.com/Herreran903/docs-medai
-- Sitio publicado: https://herreran903.github.io/docs-medai/
+- Documentation: https://github.com/Herreran903/docs-medai
+- Published site: https://herreran903.github.io/docs-medai/
 - App: https://medai-frontend-seven.vercel.app/
