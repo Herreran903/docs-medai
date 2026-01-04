@@ -1,3 +1,3 @@
 # Front API
 
-Esta carpeta se genera automaticamente con TypeDoc durante el build.
+This folder is generated automatically by TypeDoc during the build.

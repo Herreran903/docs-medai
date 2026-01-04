@@ -58,6 +58,29 @@ cp -R "${FRONT_TYPEDOC_OUT}/." "${DOCS_OUT_DIR}/"
 
 echo "Front API docs copied to ${DOCS_OUT_DIR}"
 
+# Normalize the front page heading to a single H1.
+INDEX_MD="${DOCS_OUT_DIR}/index.md"
+if [[ -f "${INDEX_MD}" ]]; then
+  python3 - "${INDEX_MD}" <<'PY'
+import sys
+
+path = sys.argv[1]
+with open(path, "r", encoding="utf-8") as f:
+    lines = f.readlines()
+
+filtered = []
+for line in lines:
+    if line.startswith("# "):
+        continue
+    filtered.append(line)
+
+body = "".join(filtered).lstrip("\n")
+output = "# Frontend API\n\n" + body
+with open(path, "w", encoding="utf-8") as f:
+    f.write(output)
+PY
+fi
+
 # ---------------------------------------------------------------------
 # MDX sanitize:
 # Docusaurus (MDX) evalúa `{id}` como JS y rompe el build con:
