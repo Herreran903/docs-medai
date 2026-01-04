@@ -6,7 +6,6 @@
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
     "gen:api": "bash scripts/fetch_front_docs.sh && bash scripts/fetch_back_openapi.sh",
-    "prebuild": "bash scripts/sync_readmes.sh",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
