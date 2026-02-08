@@ -3,6 +3,56 @@
   padding: 0;
 }
 
+.header {
+  padding: 1rem 1.25rem 0.5rem;
+}
+
+.heading {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.subheading {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.25rem 1rem;
+}
+
+.tab {
+  appearance: none;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.tab:hover {
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.tabActive {
+  appearance: none;
+  border: 1px solid var(--ifm-color-primary);
+  background: var(--ifm-color-primary);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
 .redocContainer {
   width: 100%;
   max-width: none;

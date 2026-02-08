@@ -11,7 +11,7 @@ MedAI is a web application focused on clinical entity extraction from medical te
 - **Backend (FastAPI)**: exposes endpoints like `POST /extract`, `POST /extract-batch`, and `GET /notes/{id}` to process text and fetch results.
 - **Supported models**: LSTM, Transformers such as BETO/Roberta, and LLMs such as GPT/Claude.
 - **Persistence**: results are stored in MongoDB.
-- **OpenAPI**: the specification is generated automatically by `scripts/export_openapi.py`.
+- **OpenAPI**: specs are generated automatically by `scripts/export_openapi.py` in the backend repo, one per service (gateway + model services).
 
 ## Frontend
 
@@ -22,11 +22,14 @@ The frontend consumes the backend API and provides helpers, types, and hooks doc
 Documentation lives in a separate repository (`docs-medai`) built with Docusaurus. In CI:
 
 - The frontend repo is cloned to generate Markdown with TypeDoc.
-- The backend repo is cloned to generate `openapi.json`.
+- The backend repo is cloned to generate multiple specs under `openapi/` (plus a legacy `openapi.json`).
 - The spec is rendered with ReDoc.
 
 The site is published on GitHub Pages with `baseUrl=/docs-medai/`, and the OpenAPI is served at:
-`https://herreran903.github.io/docs-medai/openapi/backend.json`.
+`https://herreran903.github.io/docs-medai/openapi/gateway.json`,
+`https://herreran903.github.io/docs-medai/openapi/ner-transformer.json`,
+`https://herreran903.github.io/docs-medai/openapi/ner-bilstm.json`,
+`https://herreran903.github.io/docs-medai/openapi/ner-llm.json`.
 
 ## Main repositories
 
